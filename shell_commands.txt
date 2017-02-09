@@ -1,0 +1,90 @@
+whoami
+
+pwd: tells us which directory we are in
+
+ls: lists the files
+
+ls:  lists file including hidden files
+
+note that "." refers to the current directory, ".." refers to the directory above the current directory
+
+mkdir (name_of_directory): make a directory
+
+rmdir (name_of_directory): remove a directory, if empty
+
+note that using mkdir or rmdir if there are spaces in the name of the directory, use quotes around the name
+
+history: command that lists all the commands previously inputed, ordered numerically from earliest
+
+!(number_of_command):  can be used to run command with the given number assigned from history
+
+touch (name_of_file) : creates empty files
+
+rm -r -i (name_of_file) : remove but ask permission at each step
+
+clear:  clear screen and put a new prompt
+
+use nano to write text files in the shell
+
+cat (name_of_file) displays contents of file
+
+mv (name_of_file) (name_of_dir)
+
+note mv can also be used to rename file
+
+cp (name_of_original_file) (name_of_new_file)
+
+   example
+   mv *.txt ~
+
+   this command move all the files with extension .txt (note the 
+   wildcard) to the home directory (note ~)
+
+wc (name_of_file) : gives the number of lines (-l), words (-w), and characters (-c) of a file
+
+   example
+   wc -l *.txt > lengths.txt
+   
+   this writes the output of lengths of all .txt files to a new
+   file called lenghts.txt
+
+   note that if i were to use >> i would add the new data to the
+   end of the existing file
+
+sort -n (name_of_file) : sort information in given file numerically (-n)
+
+wildcards:  * matches every character after character
+            ? matches single character after character
+
+head -n (number_of_lines) (name_of_file) : displays the first number of lines of the file
+
+note "tail" does same as above but starting from bottom
+
+"|" is used to pipe commands, or link them together
+
+	example:
+	sort -n lengths.txt | head -n 3 | tail _n 1
+
+	sorts numerically the lines in lengths.txt, passes on
+	the output, then take the first 3 lines of the
+	output, pass this output, and then take the last
+	line of this new output
+
+	wc -l *.txt | sort -n | head -n 5
+
+"nano" opens up the shell script so you can write a bash file
+
+using "$(number)" in the bash code prompts the user to input commands in a given order
+
+grep --color (argument) (file_name) : searches for argument, such as a phrase, in the file.  the "--color" command highlights the argument in the output.
+
+note other options for grep: -w (exact phrase of argument) 
+                             -n (include line number) 
+                             -i ()
+
+note use --help or man to look up options on commands
+
+ls lists all files, directories, etc in the current directory
+find lists all the files, directories, and subdirectories which are children of the current directory in the current directory.  find has options as well, i.e. -type d looks for type directory, -type f looks for type file.  -name can be used for specific files, directories.  
+
+
